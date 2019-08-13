@@ -1,1 +1,774 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Corinne Bintz</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="graph-scroll.js"></script>
+    <script src="append_image.js"></script>
+    <style type="text/css">
+
+    body{
+        background-color: #e8f4f8;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: apercu !important;
+    }
+
+    .cover-text{
+        text-align: left;
+        font-family: apercu !important;
+        color: white;
+    }
+
+    .cover-image {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("goat_rocks.jpeg");
+      background-position: center;
+      background-size: cover;
+    }
+
+    @font-face {
+      font-family: apercu;
+      src: url("apercu-light.ttf");
+    }
+
+
+    h1{
+        text-align: center;
+        font-family: apercu !important;
+        padding: 0px;
+    }
+
+    h2{
+        text-align: center;
+        font-family: apercu !important;
+    }
+
+
+
+    #container{
+        max-width: 1000px;
+        margin: 0px auto;
+        position: relative;
+    }
+
+    #sections{
+        width: 340px;
+        padding-bottom:300px;
+    }
+
+    #sections > section{
+        opacity: .2;
+        margin-bottom: 200px;
+    }
+
+    #sections > section.graph-scroll-active{
+        opacity: 1;
+    }
+
+    #graph{
+        margin-left: 40px;
+        width: 500px;
+        position: sticky;
+        top: 20px;
+        float: right;
+
+    }
+
+
+    /*#graph svg{
+        border:solid 1px lightgrey;
+    }*/
+    </style>
+</head>
+<body>
+    <div class="cover-image">
+        <div class="cover-text">
+        <h1>Corinne Bintz</h1>
+        <h2>Student at Middlebury College</h2>
+        </div>
+    </div>
+    <div id="social_media_links"
+    <h3> <a href='https://www.linkedin.com/in/corinne-bintz-98716a146/'>LinkedIn</a></h3>
+    <h3> <a href='https://www.linkedin.com/in/corinne-bintz-98716a146/'>Resume</a></h3>
+    </div>
+    <div id="container">
+            <div id="graph"></div>
+    <div id="sections">
+
+        <section>
+            <h2>About Me</h2>
+            Hi there! I grew up in Washington State before traveling accross the country to Vermont to study  at Middlebury College. I took a gap semester
+            before starting college to travel and volunteer, so I am currently mid-way through my junior year at Middlebury College. I started school
+            in February 2017 and will graduate in February of 2021.
+        </section>
+        <section>
+            <h2>Academic Background</h2>
+            I am majoring in Computer Science and minoring in Global Health. I have also taken a variety of Economics courses. I am particularly interested in applications of data science for
+            social good. My coursework as a computer science major has included instruction in both computational theory and development of technical
+            skills.  Particularly relevant coursework includes <b> <i> Machine Learning, Information Visualization, Algorithms and Complexity, Economic Statistics, and Introduction to Data Science</b></i>.
+            <br>
+            <br>
+            I also spent a semester from January to May of 2019 studying abroad in Stockholm, Sweden with <a href='https://disabroad.org/stockholm/'>DIS.</a> Here, I took courses in Public Health, including <b> <i> Public Health and Migration, Public Health
+            Policy in Practice, and Epidemiology </b> </i>, as well as working as research assistant for a project titled HIV and Reproductive Technology Access.
+
+        </section>
+        <section>
+            <h2>Recent Work Experience</h2>
+            <h3>University of Washington eScience Institute Data Science for Social Good</h3>
+            <h3>June 2019-Present • Seattle, Washington</h3>
+            <b><h4>Data Science Student Fellow</h4></b> Most recently, I worked as a student fellow with the University of Washington eScience Institute's Data Science
+            for Social Good Program. In partnership with the ACLU of Washington, we created an Algorithmic Equity Toolkit designed to empower community members the information regarding surveillane tehcnologies, automated decision systems,
+             and algorithmic bias for for more effective activism. Specifically, I contributed to an interactive demo using showcasing the harms with facial recognition software. Through building the demo, I worked heavily with Dash, Docker,
+             and OpenFace, an open source facial recognition tool. I also helped create our technology red flag questionairre and technology identification guide. This project gave me experience with stakeholder engagment, prototype creation,
+             human-centered design, and user-persona formation. Here are some featured blog posts about the program and the project I worked on: <br><br>
+             <a href='https://escience.washington.edu/team-develops-algorithmic-equity-toolkit-at-data-science-for-social-good-program/'>Algorithmic Equity Kit blog post</a><br><br>
+              <a href='https://escience.washington.edu/2019-data-science-for-social-good-projects/'>Data Science for Social Good 2019 Projects Overview</a>
+
+
+        </section>
+
+        <section>
+            <h3>myStrength at Livongo</h3>
+            <h3>May-August 2018 • Denver, Colorado</h3>
+            <b><h4>Software Engineer Intern</h4></b> From May to August 2018, I worked as a Software Engineer intern at myStrength at Livongo, a digital behavioral health
+            company located in Denver, Colorado. For the first 5 weeks of my internship, I contributed to native cross-platform mobile development in C# using the Xamarin framework. I spent the second 5 weeks
+            developed features for the mobile application in a Java-based RESTful API. In this role, I Utilized MySQL to write queries and Liquibase for data migrations. Throughout the whole summer, I participated in in the Agile Development Process, working with the engineering team on two-week sprints, testing, and deployments.
+            Here's a link to my end-of-summer presentation: <a href='https://www.slideshare.net/slideshow/embed_code/key/3gsOFDcsXuxB1K'>Final Presentation</a>
+
+
+        </section>
+
+        <section>
+            <h3>Middlebury College, Department of Computer Science</h3>
+            <h3>September 2017-Present • Middlebury, Vermont</h3>
+            <b><h4>Computer Science Tutor</h4></b> Since Fall of 2017, I have worked as a tutor for Middlebury's Computer Science Department. I work with students during lab sections and in evening
+            tutor sessions, helping to explain concepts in new ways, debug code, and support problem-solving.
+
+
+        </section>
+        <section>
+            <h3>Middlebury College, Department of Economics</h3>
+            <h3>September 2017-January 2018 • Middlebury, Vermont</h3>
+            <b><h4>Research Assistant</h4></b> Working as a research assistant for Professor Caitlin Knowles Myers I researched state abortion mandatory delay policies from 1980-present.
+            Professor Myers used this research to study the relationship access to reproductive health services and maternal and child health outcomes.
+
+
+
+        </section>
+        <section>
+            <h3>Middlebury College, Center for Teaching and Learning</h3>
+            <h3>September 2017-May 2018 • Middlebury, Vermont</h3>
+            <b><h4>Spanish Tutor</h4></b> I tutored peers taking Spanish language courses. I helped explain concepts in different ways, share successful study tips, and recognize patterns in speaking and writing.
+
+
+
+
+        </section>
+        <section>
+            <h3>Girls Inc. of the Pacific Northwest</h3>
+            <h3>June-August 2017 • Portland, Oregon</h3>
+            <b><h4>Staff Facilitator</h4></b> Girls Inc.'s Eureka! program is a five-year program that begins the summer after seventh grade and continues until the summer before senior year. The Eureka! program follows Girls Inc.'s mission to inspire all girls to be strong, smart, and bold, specifically in the STEM field. As a staff facilitator, I worked with my co-facilitator to prepare and facilitate personal development, STEM, and physical activity curricula to a group of five youth entering freshman year. Along with facilitating curriculum, I took the youth on a field trip once a week to local STEM workplaces. This involved driving a fifteen-passenger van from our location at Mt. Hood Community College to various workplaces in Portland, Oregon.
+
+
+
+
+
+        </section>
+        <section>
+            <h3>Technical Projects</h3>
+            I have worked on a variety of machine learning and information visualization technical projects. Some of my favorite projects
+            have focused on social issues I feel passionate about, such as racial disparities in maternal mortality in the United States
+            and health resource gaps in Vermont. I also worked on an interesting machine learning project trying to identify genes that
+            predict survival for lung cancer. Visit the links below to learn more: <br>
+            <br>
+            <a href='http://www.cs.middlebury.edu/~cbintz/cs451/finalproject/ml.html'>A Sequence for Survival: Identifiying Genes that Predict Survival of Lung Cancer</a>
+            <br>
+            <br>
+            <a href='http://www.cs.middlebury.edu/~cbintz/infovis/final_project/hw9.html'>Maternal Mortality in the United States: A Narrative Visualization</a>
+            <br>
+            <br>
+            <a href='http://www.cs.middlebury.edu/~cbintz/health_econ/HRAP/HRAP1.html'>Vermont Health Disparities</a>
+            <br>
+            <br>
+            <a href='http://www.cs.middlebury.edu/~cbintz/infovis/'>Collection of Information Visualization Projects</a>
+            <br>
+            <br>
+            <a href='http://www.cs.middlebury.edu/~cbintz/cs451/'>Collection of Machine Learning Projects</a>
+
+            </section>
+        <section>
+            <h3>Technical Skills</h3>
+            A laundry list of technical skills I've developed through coursework and work experience:<br><br>
+            <b>Programming Languages</b>: Java, Python, C#, MATLAB, JavaScript, R, MySQL, C, Stata
+            <br><br>
+            <b>Other</b>: Machine Learning Algorithm Implementation (Neural Networks, K-means, Multivariate Linear Regression, Logistic
+            Regression, SVMs), Machine Learning Frameworks (PyTorch, SciPy, NumPy, scikit-learn), D3.js, Altair, Git, pandas, Docker, Dash,
+            Unix Shell Scripting, Liquibase, Agile Software Development, Web scraping (Beautiful Soup, Selenium), Tableau
+        </section>
+        <section>
+            <h3>Soft Skills</h3>
+            Largely through attending a liberal arts school, I have sharpened many "soft skills." I feel confident in my ability to write, read,
+            and think critically, as well as convey ideas verbally and collaborate with others.
+         </section>
+         <section>
+             <h3>Activities and Leadership </h3>
+             I like to stay busy and involved outside of my coursework and employment opportunities. Here are some of my favorites
+             extracurricular activites and leadership inovlement: AnitaB Grace Hopper Celebration 2018 scholarship recipient and attendee, WECode 2018 attendee, Women
+             in Computer Science: Secretary, Middlebury Women’s Water Polo, Middlebury College Scholar, MiddVolunteers: Treasurer, MiddView
+             Orientation Wilderness Leader, Middlebury February Orientation Leader
+             </section>
+        <section>
+            <h3>Seeking...</h3>
+            I'm seeking an internship opportunity for Summer 2020. I'm especially interested in data science roles, but am
+            also excited about software engineering positions.
+            </section>
+        <section>
+            <h3>Personal interests</h3>
+            Outside of work and school, I love to spend as much time outdoors as possible hiking, biking, backpacking, running, and swimming.
+            I also enjoy yoga, trying new restaurants, spending time with my friends and family, and reading.
+        </section>
+        <section>
+            <h3>Concluding Remarks</h3>
+            Thanks so much for checking out my page! Please feel free to contact me at corinnebintz@gmail.com.
+        </section>
+
+    </div>
+
+</div>
+
+<div id="footer"></div>
+<script>
+
+    const color_scale = d3.scaleOrdinal(d3.schemeCategory10);
+    const svg = d3.select("#graph").append("svg")
+        .attr("width", 500)
+        .attr("height", 500);
+
+    const image1  = add_image1(svg, 500, 500);
+    const image2  = add_image2(svg, 500, 500);
+    const image3  = add_image3(svg, 500, 500);
+    const image4  = add_image4(svg, 500, 500);
+    const image5  = add_image5(svg, 500, 500);
+    const image6  = add_image6(svg, 500, 500);
+    const image7  = add_image7(svg, 500, 500);
+    const image8  = add_image8(svg, 500, 500);
+    const image9  = add_image9(svg, 500, 500);
+    const image10  = add_image10(svg, 500, 500);
+    const image11  = add_image11(svg, 500, 500);
+    const image12  = add_image12(svg, 500, 500);
+    const image13  = add_image13(svg, 500, 500);
+    const image14  = add_image14(svg, 500, 500);
+    const image15  = add_image15(svg, 500, 500);
+
+    var handleSection1 = function(){
+        image1.opacity(1);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+        image11.opacity(0);
+        image11();
+        image12.opacity(0);
+        image12();
+        image13.opacity(0);
+        image13();
+        image14.opacity(0);
+        image14();
+        image15.opacity(0);
+        image15();
+    }
+
+    var handleSection2 = function(){
+        image1.opacity(0);
+        image1();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image2.opacity(1);
+        image2();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+        image11.opacity(0);
+        image11();
+        image12.opacity(0);
+        image12();
+        image13.opacity(0);
+        image13();
+        image14.opacity(0);
+        image14();
+        image15.opacity(0);
+        image15();
+    }
+
+    var handleSection3 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image3.opacity(1);
+        image3();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+        image11.opacity(0);
+        image11();
+        image12.opacity(0);
+        image12();
+        image13.opacity(0);
+        image13();
+        image14.opacity(0);
+        image14();
+        image15.opacity(0);
+        image15();
+    }
+
+    var handleSection4 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image4.opacity(1);
+        image4();
+        image5.opacity(0);
+        image5();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+        image11.opacity(0);
+        image11();
+        image12.opacity(0);
+        image12();
+        image13.opacity(0);
+        image13();
+        image14.opacity(0);
+        image14();
+        image15.opacity(0);
+        image15();
+    }
+
+    var handleSection5 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image5.opacity(1);
+        image5();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+        image11.opacity(0);
+        image11();
+        image12.opacity(0);
+        image12();
+        image13.opacity(0);
+        image13();
+        image14.opacity(0);
+        image14();
+        image15.opacity(0);
+        image15();
+    }
+
+    var handleSection6 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(1);
+        image6();
+        image7.opacity(0);
+        image7();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+        image11.opacity(0);
+        image11();
+        image12.opacity(0);
+        image12();
+        image13.opacity(0);
+        image13();
+        image14.opacity(0);
+        image14();
+        image15.opacity(0);
+        image15();
+    }
+
+    var handleSection7 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image8.opacity(0);
+        image8();
+        image7.opacity(1);
+        image7();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+        image11.opacity(0);
+        image11();
+        image12.opacity(0);
+        image12();
+        image13.opacity(0);
+        image13();
+        image14.opacity(0);
+        image14();
+        image15.opacity(0);
+        image15();
+    }
+    var handleSection8 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image8.opacity(1);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+        image11.opacity(0);
+        image11();
+        image12.opacity(0);
+        image12();
+        image13.opacity(0);
+        image13();
+        image14.opacity(0);
+        image14();
+        image15.opacity(0);
+        image15();
+    }
+    var handleSection9 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image8.opacity(0);
+        image8();
+        image10.opacity(0);
+        image10();
+        image9.opacity(1);
+        image9();
+        image11.opacity(0);
+        image11();
+        image12.opacity(0);
+        image12();
+        image13.opacity(0);
+        image13();
+        image14.opacity(0);
+        image14();
+        image15.opacity(0);
+        image15();
+    }
+    var handleSection10 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(1);
+        image10();
+        image11.opacity(0);
+        image11();
+        image12.opacity(0);
+        image12();
+        image13.opacity(0);
+        image13();
+        image14.opacity(0);
+        image14();
+        image15.opacity(0);
+        image15();
+    }
+    var handleSection11 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+        image11.opacity(1);
+        image11();
+        image12.opacity(0);
+        image12();
+        image13.opacity(0);
+        image13();
+        image14.opacity(0);
+        image14();
+        image15.opacity(0);
+        image15();
+    }
+    var handleSection12 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+        image11.opacity(0);
+        image11();
+        image12.opacity(1);
+        image12();
+        image13.opacity(0);
+        image13();
+        image14.opacity(0);
+        image14();
+        image15.opacity(0);
+        image15();
+    }
+
+    var handleSection13 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+        image11.opacity(0);
+        image11();
+        image12.opacity(0);
+        image12();
+        image13.opacity(1);
+        image13();
+        image14.opacity(0);
+        image14();
+        image15.opacity(0);
+        image15();
+    }
+
+    var handleSection14 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+        image11.opacity(0);
+        image11();
+        image12.opacity(0);
+        image12();
+        image13.opacity(0);
+        image13();
+        image14.opacity(1);
+        image14();
+        image15.opacity(0);
+        image15();
+    }
+
+    var handleSection15 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+        image11.opacity(0);
+        image11();
+        image12.opacity(0);
+        image12();
+        image13.opacity(0);
+        image13();
+        image14.opacity(0);
+        image14();
+        image15.opacity(1);
+        image15();
+    }
+
+
+    var vis_steps = [handleSection1, handleSection2, handleSection3, handleSection4, handleSection5, handleSection6,
+        handleSection7,handleSection8, handleSection9, handleSection10, handleSection11, handleSection12, handleSection13,
+        handleSection14, handleSection15]
+
+    const gs = d3.graphScroll()
+        .container(d3.select("#container"))
+        .graph(d3.select("#graph"))
+        .eventId('sec1_id')
+        .sections(d3.selectAll("#container #sections > section"))
+        .on("active", function(i){
+            console.log(i);
+            console.log(vis_steps[i])
+            vis_steps[i]()
+        });
+
+
+
+</script>
+
+</body>
+</html>

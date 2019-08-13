@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Learning Final Project</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="graph-scroll.js"></script>
+    <script src="append_image.js"></script>
+
+    <style>
+
+    body{
+        max-width: 900px;
+        margin: 0px auto;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    h1{
+        margin: 50px;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    h1{
+        margin: 0px;
+        padding: 0px;
+    }
+
+
+    #container{
+        position: relative;
+    }
+
+    #sections{
+        width: 340px;
+        padding-bottom:300px;
+    }
+
+    #sections > section{
+        opacity: .2;
+        margin-bottom: 200px;
+    }
+
+    #sections > section.graph-scroll-active{
+        opacity: 1;
+    }
+
+    #graph{
+        margin-left: 40px;
+        width: 500px;
+        position: sticky;
+        top: 20px;
+        float: right;
+
+    }
+
+    #footer{
+        height:1000px;
+    }
+
+   #tooltip{
+        position:absolute;
+        width:150px;
+        height:auto;
+        padding:10px;
+        background-color: white;
+        border-radius:10px;
+        box-shadow: 4px 4px 10px rgba(0,0,0,0.4);
+        pointer-events: none;
+    }
+
+    #tooltip.hidden{
+        display:none;
+    }
+
+    #tooltip p{
+        margin:0;
+        font-family: sans-serif;
+        font-size:12px;
+    }
+
+    #graph svg{
+        border:solid 1px lightgrey;
+    }
+    </style>
+</head>
+<body>
+    <h1>Machine Learning Final Project</h1>
+    <h2>A Signature for Survival</h2>
+    <h2>Corinne Bintz & Lillie Atkins</h2>
+    <div id="container">
+            <div id="graph"></div>
+    <div id="sections">
+
+        <section>
+            <h3>Project Overview</h3>
+            We were interested in using the Cancer Genome Atlas Project (TCGA) dataset on lung cancer to train a neural network to predict survival based on selected genes. Our final deliverables are two “signatures” of genes and a neural net that can be combined to predict patient survival of lung cancer.
+        </section>
+        <section>
+            <h3>Dendrogram: 2500 Randomly Selected Genes</h3>
+            Our first step of feature selection was clustering unlabeled patients in the gene data set based on 2,500 randomly selected genes to demonstrate that based on their gene sequences, patients cluster based on survival status. We then made a dendrogram of this to visually display the clusters, and found the number of patients and percentage of patients who survived in each cluster. We used unsupervised, agglomerative hierarchical clustering, which uses a bottom up approach in successively merging clusters.
+        </section>
+        <section>
+            <h3>Dendrogram: 300 Gene Subset</h3>
+            Next, we did the same process of clustering, making the dendrogram, and finding the survival statistics for each cluster for our smaller subset of 300 genes.
+        </section>
+        <section>
+            <h3>Dendrogram: 50 genes selected using step forward feature selection</h3>
+            Now, we tried two different algorithms for features selection. First, we tried mutual information classification, which measures the dependency between two variables (feature and survival). We ran this algorithm multiple times to select varying number of genes, clustered the selected genes, and found the survival statistics and size of each cluster. We found that 30 genes selected through mutual information classification had large patient segregation based on survival status in their clusters.
+            </section>
+        <section>
+            <h3>Dendrogram: 30 genes selected using mutual information classification</h3>
+            We then tried step forward feature selection with a random forest classifier, which adds each feature one by one, runs the model, and evaluates how significant each feature was in the model’s output. We identified 50 genes selected through step forward feature selection that had large patient segregation based on survival status in their clusters.
+        </section>
+        <section>
+            <h3>Clustering</h3>
+            Here are our results for all clusters that we generated.
+         </section>
+        <section>
+            <h3>Building our Neural Net</h3>
+            Next, we created a neural network using pytorch. As we began tuning our neural network, we were getting results from 50% to 70% because we suspected that our neural net was overfitting to the training data. We implemented regularization through dropout as well as adding a weight decay factor, which implements L2 regularization, into our neural network. We found that we got the highest cross-validation accuracy when we our training accuracy stayed below 65%, which demonstrates our efforts to prevent overfitting.
+            </section>
+        <section>
+            <h3>Results</h3>
+            Through experimenting with different hyperparameters (alpha, number of epochs, number of layers, number of hidden units, weight decay, and drop out percentage), we tuned our neural network so that our cross validation set and our training set had 100% accuracy. Increasing the weight-decay in our optimizer made the biggest difference to our cross validation and test accuracy because it was the most significant in preventing the model from overfitting to the training data. Granted, we were using were very small sets of data (412 examples in training, 51 and 52 examples in cross validation and test), so we suspect that our cross-validation and test accuracy would not reach 100% on a larger dataset, but still perform well. Our final hyperparameters were 50 hidden units, 3 hidden layers, 50% dropout, weight decay of 0.04, alpha of 0.04, and epochs of 5,000.
+        </section>
+        <section>
+            <h3>Concluding Remarks</h3>
+            Through this project, we were able to apply skills we had learned throughout the semester, try out new software packages, and pursue a project of personal interest. Thank you to Professor Scharstein and Andrew Ng, our respective Middlebury and coursera professors.
+        </section>
+        <section>
+            <h3>Sources</h3>
+            Data: TCGA for LUAD (Lung Adenocarcinoma)
+            <a href="https://github.com/cbintz/UPDATED_TCGA">Code</a> <br/>
+            <a href="http://www.cs.middlebury.edu/~cbintz/cs451/finalproject/Final_Project_Report.pdf">Final Report</a>
+        </section>
+
+    </div>
+
+</div>
+
+<div id="footer"></div>
+<script>
+
+    const color_scale = d3.scaleOrdinal(d3.schemeCategory10);
+    const svg = d3.select("#graph").append("svg")
+        .attr("width", 500)
+        .attr("height", 500);
+
+    const image1  = add_image1(svg, 500, 500);
+    const image2  = add_image2(svg, 500, 500);
+    const image3  = add_image3(svg, 500, 500);
+    const image4  = add_image4(svg, 500, 500);
+    const image5  = add_image5(svg, 500, 500);
+    const image6  = add_image6(svg, 500, 500);
+    const image7  = add_image7(svg, 500, 500);
+    const image8  = add_image8(svg, 500, 500);
+    const image9  = add_image9(svg, 500, 500);
+    const image10  = add_image10(svg, 500, 500);
+
+    var handleSection1 = function(){
+        image1.opacity(1);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+    }
+
+    var handleSection2 = function(){
+        image1.opacity(0);
+        image1();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image2.opacity(1);
+        image2();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+    }
+
+    var handleSection3 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image3.opacity(1);
+        image3();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+    }
+
+    var handleSection4 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image4.opacity(1);
+        image4();
+        image5.opacity(0);
+        image5();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+    }
+
+    var handleSection5 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image5.opacity(1);
+        image5();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+    }
+
+    var handleSection6 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(1);
+        image6();
+        image7.opacity(0);
+        image7();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+    }
+
+    var handleSection7 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image8.opacity(0);
+        image8();
+        image7.opacity(1);
+        image7();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+    }
+    var handleSection8 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image8.opacity(1);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(0);
+        image10();
+    }
+    var handleSection9 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image8.opacity(0);
+        image8();
+        image10.opacity(0);
+        image10();
+        image9.opacity(1);
+        image9();
+    }
+    var handleSection10 = function(){
+        image1.opacity(0);
+        image1();
+        image2.opacity(0);
+        image2();
+        image3.opacity(0);
+        image3();
+        image4.opacity(0);
+        image4();
+        image5.opacity(0);
+        image5();
+        image6.opacity(0);
+        image6();
+        image7.opacity(0);
+        image7();
+        image8.opacity(0);
+        image8();
+        image9.opacity(0);
+        image9();
+        image10.opacity(1);
+        image10();
+    }
+
+
+    var vis_steps = [handleSection1, handleSection2, handleSection3, handleSection4, handleSection5, handleSection6,handleSection7,handleSection8, handleSection9, handleSection10]
+
+    const gs = d3.graphScroll()
+        .container(d3.select("#container"))
+        .graph(d3.select("#graph"))
+        .eventId('sec1_id')
+        .sections(d3.selectAll("#container #sections > section"))
+        .on("active", function(i){
+            console.log(i);
+            console.log(vis_steps[i])
+            vis_steps[i]()
+        });
+
+
+
+</script>
+
+</body>
+</html>
