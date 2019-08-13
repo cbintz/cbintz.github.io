@@ -537,7 +537,7 @@ function add_image15(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', '/Users/corinnebintz/Desktop/cbintz.github.io/email.png')
+    .attr('xlink:href', 'email.png')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
