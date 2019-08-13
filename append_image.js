@@ -49,7 +49,7 @@ function add_image2(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', '/Users/corinnebintz/Desktop/cbintz.github.io/middlebury.jpeg')
+    .attr('xlink:href', 'middlebury.jpeg')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
@@ -87,7 +87,7 @@ function add_image3(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', '/Users/corinnebintz/Desktop/cbintz.github.io/escience.jpeg')
+    .attr('xlink:href', 'escience.jpeg')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
@@ -125,7 +125,7 @@ function add_image4(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', '/Users/corinnebintz/Desktop/cbintz.github.io/mystrength-logo.png')
+    .attr('xlink:href', 'mystrength-logo.png')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
@@ -162,7 +162,7 @@ function add_image5(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', '/Users/corinnebintz/Desktop/cbintz.github.io/middlebury.jpeg')
+    .attr('xlink:href', 'middlebury.jpeg')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
@@ -199,7 +199,7 @@ function add_image6(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', '/Users/corinnebintz/Desktop/cbintz.github.io/middlebury.jpeg')
+    .attr('xlink:href', 'middlebury.jpeg')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
@@ -241,7 +241,7 @@ function add_image7(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', '/Users/corinnebintz/Desktop/cbintz.github.io/middlebury.jpeg')
+    .attr('xlink:href', 'middlebury.jpeg')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
@@ -278,7 +278,7 @@ function add_image8(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', '/Users/corinnebintz/Desktop/cbintz.github.io/girls_inc_pnw.jpg')
+    .attr('xlink:href', 'girls_inc_pnw.jpg')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
@@ -315,7 +315,7 @@ function add_image9(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', '/Users/corinnebintz/Desktop/cbintz.github.io/images.jpeg')
+    .attr('xlink:href', 'images.jpeg')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
@@ -352,7 +352,7 @@ function add_image10(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', '/Users/corinnebintz/Desktop/cbintz.github.io/gears.jpg')
+    .attr('xlink:href', 'gears.jpg')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
@@ -389,7 +389,7 @@ function add_image11(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', '/Users/corinnebintz/Desktop/cbintz.github.io/people.jpg')
+    .attr('xlink:href', 'people.jpg')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
@@ -426,7 +426,7 @@ function add_image12(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', '/Users/corinnebintz/Desktop/cbintz.github.io/grace_hopper.png')
+    .attr('xlink:href', 'grace_hopper.png')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
@@ -463,7 +463,7 @@ function add_image13(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', '/Users/corinnebintz/Desktop/cbintz.github.io/intern.png')
+    .attr('xlink:href', 'intern.png')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
@@ -500,7 +500,7 @@ function add_image14(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', '/Users/corinnebintz/Desktop/cbintz.github.io/smile.jpg')
+    .attr('xlink:href', 'smile.jpg')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
