@@ -11,7 +11,7 @@ function add_image1(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', '/Users/corinnebintz/Desktop/cbintz.github.io/me.jpeg')
+    .attr('xlink:href', 'me.jpeg')
     .attr('width', 550)
     .attr('height', 550)
     .attr("x", -30)
