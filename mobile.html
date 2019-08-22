@@ -50,13 +50,16 @@
 
     #sections{
         width: 340px;
+        height: 500px;
         padding-bottom:300px;
     }
 
     #graph{
         margin-left: 40px;
         width: 500px;
-        position: sticky;
+        height: 600px;
+        padding-bottom:300px;
+        /*position: sticky;*/
         top: 20px;
         float: right;
     }
@@ -70,7 +73,35 @@
         margin-left: 20px;
     }
 
+    .pic {
+        width: 500px;
+        /*height: 500px;*/
+        top: 20px;
+        float: right;
+        margin-bottom: 50px;
+    }
 
+    .text {
+        width : 500px;
+        height: 600px;
+    }
+
+    .txt{
+        float: left;
+        margin-left: 40px;
+        max-width: 400px;
+    }
+
+    .pic {
+        float: right;
+        max-width: 400px;
+        max-height: 400px;
+    }
+
+    .chunk {
+        width: 1000px;
+        height: 800px;
+    }
 
     /*#graph svg{
         border:solid 1px lightgrey;
@@ -85,21 +116,29 @@
         </div>
     </div>
     <div id="social_media_links">
+        <div class = "link" >
+            <h3> <a href='https://www.linkedin.com/in/corinne-bintz-98716a146/'>LinkedIn</a></h3>
+        </div>
         <div class = "link">
-            <h3> <a href=''>Mobile-friendly version</a></h3>
+            <h3> <a href='corinne_bintz.pdf'>Resume</a></h3>
+        </div>
+        <div class = "link">
+            <h3> <a href='mailto:corinnebintz@gmail.com'>Email</a></h3>
         </div>
     </div>
-    <div id="container">
-            <div id="graph"></div>
-    <div id="sections">
-
-        <section>
+    <div id = "section1" class = "chunk">
+        <div class = "txt">
             <h2>About Me</h2>
             Hi there! I grew up in Washington State before traveling accross the country to Vermont to study  at Middlebury College. I took a gap semester
             before starting college to travel and volunteer, so I am currently mid-way through my junior year at Middlebury College. I started school
             in February 2017 and will graduate in February of 2021.
-        </section>
-        <section>
+        </div>
+        <div class = "img">
+            <img src = "me.jpeg" class = "pic">
+        </div>
+    </div>
+    <div id = "section2" class = "chunk">
+        <div class = "txt">
             <h2>Academic Background</h2>
             I am majoring in Computer Science and minoring in Global Health. I have also taken a variety of Economics courses. I am particularly interested in applications of data science for
             social good. My coursework as a computer science major has included instruction in both computational theory and development of technical
@@ -108,9 +147,13 @@
             <br>
             I also spent a semester from January to May of 2019 studying abroad in Stockholm, Sweden with <a href='https://disabroad.org/stockholm/'>DIS.</a> Here, I took courses in Public Health, including <b> <i> Public Health and Migration, Public Health
             Policy in Practice, and Epidemiology </b> </i>, as well as working as research assistant for a project titled HIV and Reproductive Technology Access.
-
-        </section>
-        <section>
+        </div>
+        <div class = "img">
+            <img src = "middlebury.jpeg" class = "pic">
+        </div>
+    </div>
+    <div id = "section2" class = "chunk">
+        <div class = "txt">
             <h2>Recent Work Experience</h2>
             <h3>University of Washington eScience Institute Data Science for Social Good</h3>
             <h3>June 2019-Present • Seattle, Washington</h3>
@@ -121,11 +164,14 @@
              human-centered design, and user-persona formation. Here are some featured blog posts about the program and the project I worked on: <br><br>
              <a href='https://escience.washington.edu/team-develops-algorithmic-equity-toolkit-at-data-science-for-social-good-program/'>Algorithmic Equity Kit blog post</a><br><br>
               <a href='https://escience.washington.edu/2019-data-science-for-social-good-projects/'>Data Science for Social Good 2019 Projects Overview</a>
+        </div>
+        <div class = "img">
+            <img src = "escience.jpeg" class = "pic">
+        </div>
+    </div>
 
-
-        </section>
-
-        <section>
+    <div id = "section2" class = "chunk">
+        <div class = "txt">
             <h3>myStrength at Livongo</h3>
             <h3>May-August 2018 • Denver, Colorado</h3>
             <b><h4>Software Engineer Intern</h4></b> From May to August 2018, I worked as a Software Engineer intern at myStrength at Livongo, a digital behavioral health
@@ -133,46 +179,60 @@
             developed features for the mobile application in a Java-based RESTful API. In this role, I Utilized MySQL to write queries and Liquibase for data migrations. Throughout the whole summer, I participated in in the Agile Development Process, working with the engineering team on two-week sprints, testing, and deployments.
             Here's a link to my end-of-summer presentation: <a href='https://www.slideshare.net/slideshow/embed_code/key/3gsOFDcsXuxB1K'>Final Presentation</a>
 
-
-        </section>
-
-        <section>
+        </div>
+        <div class = "img">
+            <img src = "mystrength-logo.png" class = "pic">
+        </div>
+    </div>
+    <div id = "section2" class = "chunk">
+        <div class = "txt">
             <h3>Middlebury College, Department of Computer Science</h3>
             <h3>September 2017-Present • Middlebury, Vermont</h3>
             <b><h4>Computer Science Tutor</h4></b> Since Fall of 2017, I have worked as a tutor for Middlebury's Computer Science Department. I work with students during lab sections and in evening
             tutor sessions, helping to explain concepts in new ways, debug code, and support problem-solving.
 
-
-        </section>
-        <section>
+        </div>
+        <div class = "img">
+            <img src = "middlebury.jpeg" class = "pic">
+        </div>
+    </div>
+    <div id = "section2" class = "chunk">
+        <div class = "txt">
             <h3>Middlebury College, Department of Economics</h3>
             <h3>September 2017-January 2018 • Middlebury, Vermont</h3>
             <b><h4>Research Assistant</h4></b> Working as a research assistant for Professor Caitlin Knowles Myers I researched state abortion mandatory delay policies from 1980-present.
             Professor Myers used this research to study the relationship access to reproductive health services and maternal and child health outcomes.
+        </div>
+        <div class = "img">
+            <img src = "middlebury.jpeg" class = "pic">
+        </div>
+    </div>
 
-
-
-        </section>
-        <section>
+    <div id = "section2" class = "chunk">
+        <div class = "txt">
             <h3>Middlebury College, Center for Teaching and Learning</h3>
             <h3>September 2017-May 2018 • Middlebury, Vermont</h3>
             <b><h4>Spanish Tutor</h4></b> I tutored peers taking Spanish language courses. I helped explain concepts in different ways, share successful study tips, and recognize patterns in speaking and writing.
+        </div>
+        <div class = "img">
+            <img src = "middlebury.jpeg" class = "pic">
+        </div>
+    </div>
 
-
-
-
-        </section>
-        <section>
+    <div id = "section2" class = "chunk">
+        <div class = "txt">
             <h3>Girls Inc. of the Pacific Northwest</h3>
             <h3>June-August 2017 • Portland, Oregon</h3>
             <b><h4>Staff Facilitator</h4></b> Girls Inc.'s Eureka! program is a five-year program that begins the summer after seventh grade and continues until the summer before senior year. The Eureka! program follows Girls Inc.'s mission to inspire all girls to be strong, smart, and bold, specifically in the STEM field. As a staff facilitator, I worked with my co-facilitator to prepare and facilitate personal development, STEM, and physical activity curricula to a group of five youth entering freshman year. Along with facilitating curriculum, I took the youth on a field trip once a week to local STEM workplaces. This involved driving a fifteen-passenger van from our location at Mt. Hood Community College to various workplaces in Portland, Oregon.
 
+        </div>
+        <div class = "img">
+            <img src = "girls_inc_pnw.jpg" class = "pic">
+        </div>
+    </div>
 
-
-
-
-        </section>
-        <section>
+    <div id = "section2" class = "chunk">
+        <div class = "txt">
             <h3>Technical Projects</h3>
             I have worked on a variety of machine learning and information visualization technical projects. Some of my favorite projects
             have focused on social issues I feel passionate about, such as racial disparities in maternal mortality in the United States
@@ -193,8 +253,14 @@
             <br>
             <a href='http://www.cs.middlebury.edu/~cbintz/cs451/'>Collection of Machine Learning Projects</a>
 
-            </section>
-        <section>
+        </div>
+        <div class = "img">
+            <img src = "gears.jpg" class = "pic">
+        </div>
+    </div>
+
+    <div id = "section2" class = "chunk">
+        <div class = "txt">
             <h3>Technical Skills</h3>
             A laundry list of technical skills I've developed through coursework and work experience:<br><br>
             <b>Programming Languages</b>: Java, Python, C#, MATLAB, JavaScript, R, MySQL, C, Stata
@@ -202,37 +268,79 @@
             <b>Other</b>: Machine Learning Algorithm Implementation (Neural Networks, K-means, Multivariate Linear Regression, Logistic
             Regression, SVMs), Machine Learning Frameworks (PyTorch, SciPy, NumPy, scikit-learn), D3.js, Altair, Git, pandas, Docker, Dash,
             Unix Shell Scripting, Liquibase, Agile Software Development, Web scraping (Beautiful Soup, Selenium), Tableau
-        </section>
-        <section>
+
+        </div>
+        <div class = "img">
+            <img src = "d3.jpeg" class = "pic">
+        </div>
+    </div>
+
+    <div id = "section2" class = "chunk">
+        <div class = "txt">
             <h3>Soft Skills</h3>
             Largely through attending a liberal arts school, I have sharpened many "soft skills." I feel confident in my ability to write, read,
             and think critically, as well as convey ideas verbally and collaborate with others.
-         </section>
-         <section>
-             <h3>Activities and Leadership </h3>
-             I like to stay busy and involved outside of my coursework and employment opportunities. Here are some of my favorites
-             extracurricular activites and leadership inovlement: AnitaB Grace Hopper Celebration 2018 scholarship recipient and attendee, WECode 2018 attendee, Women
-             in Computer Science: Secretary, Middlebury Women’s Water Polo, Middlebury College Scholar, MiddVolunteers: Treasurer, MiddView
-             Orientation Wilderness Leader, Middlebury February Orientation Leader
-             </section>
-        <section>
+
+        </div>
+        <div class = "img">
+            <img src = "people.jpg" class = "pic">
+        </div>
+    </div>
+
+    <div id = "section2" class = "chunk">
+        <div class = "txt">
+            <h3>Activities and Leadership </h3>
+            I like to stay busy and involved outside of my coursework and employment opportunities. Here are some of my favorites
+            extracurricular activites and leadership inovlement: AnitaB Grace Hopper Celebration 2018 scholarship recipient and attendee, WECode 2018 attendee, Women
+            in Computer Science: Secretary, Middlebury Women’s Water Polo, Middlebury College Scholar, MiddVolunteers: Treasurer, MiddView
+            Orientation Wilderness Leader, Middlebury February Orientation Leader
+            </section>
+
+        </div>
+        <div class = "img">
+            <img src = "grace_hopper.png" class = "pic">
+        </div>
+    </div>
+
+    <div id = "section2" class = "chunk">
+        <div class = "txt">
             <h3>Seeking...</h3>
             I'm seeking an internship opportunity for Summer 2020. I'm especially interested in data science roles, but am
             also excited about software engineering positions.
-            </section>
-        <section>
+        </div>
+        <div class = "img">
+            <img src = "intern.png" class = "pic">
+        </div>
+    </div>
+
+    <div id = "section2" class = "chunk">
+        <div class = "txt">
             <h3>Personal interests</h3>
             Outside of work and school, I love to spend as much time as possible outdoors hiking, biking, backpacking, running, and swimming.
             I also enjoy yoga, trying new restaurants, spending time with my friends and family, and reading.
-        </section>
-        <section>
-            <h3>Concluding Remarks</h3>
-            Thanks so much for checking out my page! Please feel free to contact me at corinnebintz@gmail.com.
-        </section>
 
+        </div>
+        <div class = "img">
+            <img src = "smile.jpg" class = "pic">
+        </div>
     </div>
 
-</div>
+    <div id = "section2" class = "chunk">
+        <div class = "txt">
+            <h3>Personal interests</h3>
+            Outside of work and school, I love to spend as much time as possible outdoors hiking, biking, backpacking, running, and swimming.
+            I also enjoy yoga, trying new restaurants, spending time with my friends and family, and reading.
+
+        </div>
+        <div class = "img">
+            <img src = "smile.jpg" class = "pic">
+        </div>
+    </div>
+
+
+
+
+
 
 <div id="footer"></div>
 <script>
