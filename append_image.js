@@ -501,7 +501,7 @@ function add_image14(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', 'grad.jpeg')
+    .attr('xlink:href', 'grad.png')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
