@@ -125,7 +125,7 @@ function add_image4(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', 'aasd.png')
+    .attr('xlink:href', 'AASD.png')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
