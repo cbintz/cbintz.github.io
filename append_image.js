@@ -538,7 +538,7 @@ function add_image15(parent, width, height){
 
 
     var myimage = chart.append('image')
-    .attr('xlink:href', 'smile.jpg')
+    .attr('xlink:href', 'alpine.jpeg')
     .attr('width', 500)
     .attr('height', 500)
     .attr("x", 0)
